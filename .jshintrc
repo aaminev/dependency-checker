@@ -1,0 +1,33 @@
+{
+  "curly": true,
+  "eqeqeq": false,
+  "immed": true,
+  "maxerr": 9999999,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "shadow": true,
+  "strict": false,
+  "undef": true,
+  "unused": "vars",
+  "boss": true,
+  "debug": false,
+  "eqnull": true,
+  "esnext": false,
+  "node": true,
+  "evil": true,
+  "laxbreak": false,
+  "plusplus": false,
+  "sub": true,
+
+
+  "browser": true,
+  "devel": true,
+
+
+  "nomen": false,
+  "onevar": false,
+  "regexp": false,
+  "white": false
+}

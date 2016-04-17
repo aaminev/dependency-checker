@@ -1,0 +1,25 @@
+{
+  "name": "dependency-checker",
+  "version": "0.0.1",
+  "description": "Adds a simple dependency check based on defaults for a bower_components and node_modules. Relies on ember-cli-dependency-checker and can be used as a library or executable.",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "ember-cli-dependency-checker": "^1.2.0",
+    "exists-sync": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenefits/dependency-checker.git"
+  },
+  "author": "MiguelMadero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zenefits/dependency-checker/issues"
+  },
+  "homepage": "https://github.com/zenefits/dependency-checker#readme"
+}
