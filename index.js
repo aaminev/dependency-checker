@@ -4,31 +4,26 @@ var DC = require ('ember-cli-dependency-checker/lib/dependency-checker');
 var existsSync = require('exists-sync');
 var assign = require('lodash/assign');
 var path = require('path');
-
+var process = require('process');
+var appDir = process.cwd();
 // Simulates an ember-cli-project
 var project = {
-  root: './',
-  dependencies: function(pkg, excludeDevDeps) {
-    pkg = pkg || this.pkg || {};
-
-    var devDependencies = pkg['devDependencies'];
-    if (excludeDevDeps) {
-      devDependencies = {};
-    }
-
-    return assign({}, devDependencies, pkg['dependencies']);
+  root: appDir,
+  dependencies: function() {
+    var packagePath = path.join(this.root, 'package.json');
+    var pkg = (existsSync(packagePath)) ? require(packagePath) : {};
+    return assign({}, pkg['devDependencies'], pkg['dependencies']);
   },
-  bowerDependencies: function(bower) {
-    if (!bower) {
-      var bowerPath = path.join(this.root, 'bower.json');
-      bower = (existsSync(bowerPath)) ? require(bowerPath) : {};
-    }
+  bowerDependencies: function() {
+    var bowerPath = path.join(this.root, 'bower.json');
+    var bower = (existsSync(bowerPath)) ? require(bowerPath) : {};
     return assign({}, bower['devDependencies'], bower['dependencies']);
   }
 };
+
 var reporter = new Reporter();
 var dependencyChecker = new DC(project, reporter);
 
-module.exports.check = function () {
+module.exports = function () {
   dependencyChecker.checkDependencies();
 };
