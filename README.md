@@ -13,5 +13,5 @@ require('dependency-checker')();
 ## Using as an executable
 
 ```
-./node_modules/dependency-checker/.bin/dependency-check
+./node_modules/.bin/check-dependencies
 ```
