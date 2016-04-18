@@ -6,9 +6,12 @@ as a library or executable.
 
 ## Using as a library
 
+```
 require('dependency-checker').check();
+```
 
 ## Using as an executable
 
+```
 ./node_modules/dependency-checker/.bin/dependency-check
-
+```
