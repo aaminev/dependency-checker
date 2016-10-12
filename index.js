@@ -18,7 +18,8 @@ var project = {
     var bowerPath = path.join(this.root, 'bower.json');
     var bower = (existsSync(bowerPath)) ? require(bowerPath) : {};
     return assign({}, bower['devDependencies'], bower['dependencies']);
-  }
+  },
+  bowerDirectory: path.join(appDir, 'bower_components')
 };
 
 var reporter = new Reporter();
